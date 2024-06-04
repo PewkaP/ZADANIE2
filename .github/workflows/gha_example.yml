@@ -69,5 +69,7 @@ jobs:
         name: Security scan with Docker Scout
         uses: docker/scout-action@v1
         with:
+          dockerhub-user: ${{ secrets.DOCKERHUB_USERNAME }}
+          dockerhub-password: ${{ secrets.DOCKERHUB_TOKEN }}
           image: ${{ vars.DOCKERHUB_USERNAME }}/example:1.0.1
           fail-on: high,critical
